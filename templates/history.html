@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Resume History</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+  <div class="navbar">
+
+<a href="/dashboard">🏠 Dashboard</a>
+
+<a href="/upload">📄 Upload</a>
+
+<a href="/history">📊 History</a>
+
+<a href="/profile">👤 Profile</a>
+
+<a href="/about">ℹ️ About</a>
+
+<a href="/contact">📞 Contact</a>
+
+<a href="/logout">🚪 Logout</a>
+
+</div>
+<form method="GET" action="/history">
+    <input type="text"
+           name="search"
+           placeholder="Search by job or skill">
+    <button type="submit">Search</button>
+</form>
+
+<br>
+<div class="container">
+
+    <h1>📄 Resume Analysis History</h1>
+
+
+    {% if history %}
+
+
+        {% for item in history %}
+
+        <div class="card">
+
+            <h2>Resume Score: {{ item.score }}%</h2>
+
+            <h3>✅ Skills Found</h3>
+            <p>
+                {{ item.skills }}
+            </p>
+
+
+            <h3>❌ Missing Skills</h3>
+            <p>
+                {{ item.missing }}
+            </p>
+
+
+            <h3>💼 Recommended Jobs</h3>
+            <p>
+                {{ item.jobs }}
+            </p>
+
+
+        </div>
+
+        {% endfor %}
+
+
+    {% else %}
+
+        <div class="card">
+
+            <h2>No Resume History Found</h2>
+
+            <p>
+                Upload and analyze a resume to see reports here.
+            </p>
+
+        </div>
+
+    {% endif %}
+
+
+    <br>
+
+    <a href="/dashboard">
+        <button>⬅ Back to Dashboard</button>
+    </a>
+
+
+</div>
+</body>
+</html>

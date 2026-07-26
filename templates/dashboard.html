@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Resume Analyzer Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+<div class="navbar">
+
+<a href="/dashboard">🏠 Dashboard</a>
+
+<a href="/upload">📄 Upload</a>
+
+<a href="/history">📊 History</a>
+
+<a href="/profile">👤 Profile</a>
+
+<a href="/about">ℹ️ About</a>
+
+<a href="/contact">📞 Contact</a>
+
+<a href="/logout">🚪 Logout</a>
+
+</div>
+<div class="container">
+
+    <h1>🤖 AI Resume Analyzer</h1>
+
+    <div class="card">
+
+        <h2>Welcome {{ name }} 👋</h2>
+
+        <p>
+            Upload your resume and get AI-based analysis,
+            skill detection, improvement suggestions and job recommendations.
+        </p>
+
+        <br>
+
+        <a href="/upload">
+            <button>📄 Upload Resume</button>
+        </a>
+
+        <br><br>
+
+        <a href="/history">
+            <button>📊 View Resume History</button>
+        </a>
+
+        <br><br>
+<br><br>
+
+<a href="/profile">
+    <button>👤 My Profile</button>
+</a>
+<br><br>
+
+<a href="/about">
+    <button>ℹ️ About Project</button>
+</a>
+<br><br>
+
+<a href="/admin">
+    <button>🛠 Admin Panel</button>
+</a>
+<br><br>
+
+<a href="/contact">
+    <button>📞 Contact Us</button>
+</a>
+<a href="/logout">
+            <button>🚪 Logout</button>
+        </a>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Features</h2>
+
+        <ul>
+            <li>📄 PDF Resume Reading</li>
+            <li>🧠 AI Skill Analysis</li>
+            <li>📊 Resume Score</li>
+            <li>💡 Improvement Suggestions</li>
+            <li>💼 Job Role Recommendations</li>
+            <li>📁 Resume History</li>
+        </ul>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>How It Works</h2>
+
+        <ol>
+            <li>Create an account</li>
+            <li>Login to your dashboard</li>
+            <li>Upload your resume PDF</li>
+            <li>AI analyzes your resume</li>
+            <li>Get career improvement suggestions</li>
+        </ol>
+
+    </div>
+
+
+</div>
+
+</body>
+
+</html>

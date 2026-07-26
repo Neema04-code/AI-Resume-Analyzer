@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>User Profile</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+<div class="navbar">
+
+<a href="/dashboard">🏠 Dashboard</a>
+
+<a href="/upload">📄 Upload</a>
+
+<a href="/history">📊 History</a>
+
+<a href="/profile">👤 Profile</a>
+
+<a href="/about">ℹ️ About</a>
+
+<a href="/contact">📞 Contact</a>
+
+<a href="/logout">🚪 Logout</a>
+
+</div>
+<div class="container">
+
+<h1>👤 My Profile</h1>
+
+
+<div class="card">
+
+<h2>Name: {{ name }}</h2>
+
+<p><b>Email:</b> {{ email }}</p>
+
+<p><b>Total Resumes Analyzed:</b> {{ total }}</p>
+
+<p><b>Best Resume Score:</b> {{ best_score }}%</p>
+
+</div>
+
+
+<br>
+
+<a href="/dashboard">
+<button>⬅ Back to Dashboard</button>
+</a>
+
+
+</div>
+
+</body>
+
+</html>

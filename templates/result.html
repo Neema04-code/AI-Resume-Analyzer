@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>AI Resume Analysis Result</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<style>
+
+.score-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.section {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 12px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+<div class="navbar">
+
+<a href="/dashboard">🏠 Dashboard</a>
+
+<a href="/upload">📄 Upload</a>
+
+<a href="/history">📊 History</a>
+
+<a href="/profile">👤 Profile</a>
+
+<a href="/about">ℹ️ About</a>
+
+<a href="/contact">📞 Contact</a>
+
+<a href="/logout">🚪 Logout</a>
+
+</div>
+
+<div class="container">
+
+
+<h1>🤖 AI Resume Analysis</h1>
+
+
+<div class="card">
+
+<div class="score-circle">
+
+{{ score }}%
+
+</div>
+
+<h2 style="text-align:center;">
+Resume Score
+</h2>
+
+</div>
+
+
+
+<div class="section">
+
+<h2>✅ Skills Found</h2>
+
+<ul>
+
+{% for skill in found %}
+
+<li>{{ skill }}</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+
+
+<div class="section">
+
+<h2>❌ Skills Missing</h2>
+
+<ul>
+
+{% for skill in missing %}
+
+<li>{{ skill }}</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+
+
+<div class="section">
+
+<h2>💡 Suggestions</h2>
+
+<ul>
+
+{% for item in suggestions %}
+
+<li>{{ item }}</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+
+
+<div class="section">
+
+<h2>💼 Recommended Jobs</h2>
+
+<ul>
+
+{% for job in jobs %}
+
+<li>{{ job }}</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+<div class="section">
+
+<h2>📊 Resume Summary</h2>
+
+<table border="1" cellpadding="10">
+
+<tr>
+    <th>Category</th>
+    <th>Value</th>
+</tr>
+
+<tr>
+    <div class="score-circle">
+    {{ score }}%
+</div>
+
+<h2>Resume Score</h2>
+</tr>
+
+<tr>
+    <td>Skills Found</td>
+    <td>{{ found|length }}</td>
+</tr>
+
+<tr>
+    <td>Missing Skills</td>
+    <td>{{ missing|length }}</td>
+</tr>
+
+<tr>
+    <td>Recommended Jobs</td>
+    <td>{{ jobs|length }}</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="section">
+
+<h2>📄 Resume Text</h2>
+
+<p>
+{{ text }}
+</p>
+
+</div>
+
+
+
+<br><br>
+
+<a href="/download_report">
+    <button>⬇ Download Report PDF</button>
+</a>
+<a href="/upload">
+<button>Analyze Another Resume</button>
+</a>
+
+
+</div>
+
+
+</body>
+
+</html>
